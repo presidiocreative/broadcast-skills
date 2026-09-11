@@ -5,7 +5,7 @@ description: Set up product upsells ("Goes with", "Complete the look", cross-sel
 
 # Broadcast upsells
 
-Broadcast shows a paired product (or up to three) in an **Upsell** block on the product page, and again in the cart drawer after the main product is added. Pairings are per product and come from two product metafields, so one product template serves the whole catalogue.
+Broadcast shows a paired product (or up to three) in an **Upsell** block on the product page, and again in the cart drawer after the main product is added. Pairings are per product and come from two product metafields, so one product template serves the whole catalog.
 
 Live docs (fetch with the `broadcast-docs` MCP `getPage` tool):
 

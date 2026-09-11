@@ -40,5 +40,5 @@ Swatches for options other than Color: rename the option label in the language f
 1. Check the theme version and whether `snippets/swatch-input.liquid` uses `value.swatch` (native support present).
 2. Run `scripts/audit_swatch_values.py` (needs Admin API read access) or query `products { options { name optionValues { name swatch { color image { url } } linkedMetafieldValue } } }` to see which values already resolve.
 3. Prefer linking the Color option to `shopify--color-pattern` for every product; fall back to `swatch_color_list` entries for one-off values or textures, uploading swatch images to Files first.
-4. Set `collection_swatch_style` with the catalogue size in mind; suggest `limited` or `text` above roughly 24 products per page.
+4. Set `collection_swatch_style` with the catalog size in mind; suggest `limited` or `text` above roughly 24 products per page.
 5. Verify on a preview theme: `scripts/verify_swatches.sh <store> <handle> [preview_theme_id]` prints each swatch's resolved `--swatch` value; `var(--x)` with no matching list entry means grey, and zero swatches with several `radio__button` hits means the option fell back to text buttons because nothing supplies a color.
