@@ -1,0 +1,12 @@
+# Creates the two product metafield definitions Broadcast siblings read.
+# Variables: metafield-definitions.variables.json (omit access.admin — rejected on the theme namespace)
+mutation CreateSiblingDefs($color: MetafieldDefinitionInput!, $group: MetafieldDefinitionInput!) {
+  colorDef: metafieldDefinitionCreate(definition: $color) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+  groupDef: metafieldDefinitionCreate(definition: $group) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+}

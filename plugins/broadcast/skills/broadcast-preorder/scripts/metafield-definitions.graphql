@@ -1,0 +1,13 @@
+# Creates the two boolean definitions Broadcast reads for pre-order.
+# Variables: metafield-definitions.variables.json
+# Note: do NOT add `access` — Shopify rejects admin access controls on the `theme` namespace.
+mutation CreatePreorderDefs($product: MetafieldDefinitionInput!, $variant: MetafieldDefinitionInput!) {
+  productDef: metafieldDefinitionCreate(definition: $product) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+  variantDef: metafieldDefinitionCreate(definition: $variant) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+}

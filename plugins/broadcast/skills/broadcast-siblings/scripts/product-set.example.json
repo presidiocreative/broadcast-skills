@@ -1,0 +1,76 @@
+{
+  "input": {
+    "title": "Antigravity – Storm Grey",
+    "handle": "antigravity-storm-grey",
+    "vendor": "TRUE linkswear",
+    "productType": "Shoes",
+    "status": "ACTIVE",
+    "tags": [
+      "antigravity",
+      "shoes",
+      "siblings-antigravity"
+    ],
+    "metafields": [
+      {
+        "namespace": "theme",
+        "key": "sibling_color",
+        "type": "single_line_text_field",
+        "value": "Storm Grey"
+      },
+      {
+        "namespace": "theme",
+        "key": "siblings",
+        "type": "single_line_text_field",
+        "value": "siblings-antigravity"
+      }
+    ],
+    "files": [
+      {
+        "originalSource": "https://example.com/antigravity-storm-grey.jpg",
+        "filename": "antigravity-storm-grey.jpg",
+        "contentType": "IMAGE",
+        "alt": "Antigravity in Storm Grey"
+      }
+    ],
+    "productOptions": [
+      {
+        "name": "Size",
+        "position": 1,
+        "values": [
+          {
+            "name": "8"
+          },
+          {
+            "name": "9"
+          },
+          {
+            "name": "10"
+          }
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "optionValues": [
+          {
+            "optionName": "Size",
+            "name": "8"
+          }
+        ],
+        "price": "199.00",
+        "sku": "AG-SG-8",
+        "inventoryItem": {
+          "tracked": true
+        },
+        "inventoryQuantities": [
+          {
+            "locationId": "gid://shopify/Location/…",
+            "name": "available",
+            "quantity": 10
+          }
+        ]
+      }
+    ]
+  },
+  "_note": "Use with: mutation($input: ProductSetInput!){ productSet(input:$input, synchronous:true){ product{ id handle } userErrors{ field message code } } }. No Colour option — the colour is the metafield."
+}

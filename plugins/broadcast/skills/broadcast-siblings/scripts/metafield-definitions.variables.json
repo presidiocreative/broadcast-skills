@@ -1,0 +1,26 @@
+{
+  "color": {
+    "name": "Sibling Color",
+    "namespace": "theme",
+    "key": "sibling_color",
+    "description": "Broadcast siblings: swatch label / colour name for this product. https://broadcast.presidiocreative.com/siblings/product-siblings/siblings-color",
+    "ownerType": "PRODUCT",
+    "type": "single_line_text_field",
+    "pin": true,
+    "access": {
+      "storefront": "PUBLIC_READ"
+    }
+  },
+  "group": {
+    "name": "Siblings",
+    "namespace": "theme",
+    "key": "siblings",
+    "description": "Broadcast siblings: handle of the collection that groups this product with its colour siblings. https://broadcast.presidiocreative.com/siblings/product-siblings/siblings-collection",
+    "ownerType": "PRODUCT",
+    "type": "single_line_text_field",
+    "pin": true,
+    "access": {
+      "storefront": "PUBLIC_READ"
+    }
+  }
+}

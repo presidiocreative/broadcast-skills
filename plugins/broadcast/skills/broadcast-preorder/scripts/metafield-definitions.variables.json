@@ -1,0 +1,20 @@
+{
+  "product": {
+    "name": "Preorder",
+    "namespace": "theme",
+    "key": "preorder",
+    "description": "Broadcast: True replaces Add to cart with Pre-order for the whole product. https://broadcast.presidiocreative.com/products/product-pages/pre-order-using-metafields",
+    "ownerType": "PRODUCT",
+    "type": "boolean",
+    "pin": true
+  },
+  "variant": {
+    "name": "Preorder",
+    "namespace": "theme",
+    "key": "preorder",
+    "description": "Broadcast: True shows the Pre-order button for this variant only. https://broadcast.presidiocreative.com/products/product-pages/pre-order-variants-with-metafields",
+    "ownerType": "PRODUCTVARIANT",
+    "type": "boolean",
+    "pin": true
+  }
+}

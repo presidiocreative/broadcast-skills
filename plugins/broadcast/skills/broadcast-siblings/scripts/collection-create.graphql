@@ -1,0 +1,14 @@
+# Manual collection grouping one sibling set. Handle must equal each sibling's theme.siblings value.
+# Variables example:
+# {"input":{"title":"Siblings – Antigravity","handle":"siblings-antigravity","sortOrder":"MANUAL",
+#   "products":["gid://shopify/Product/1","gid://shopify/Product/2","gid://shopify/Product/3"]}}
+mutation SiblingCollection($input: CollectionInput!) {
+  collectionCreate(input: $input) {
+    collection { id handle productsCount { count } }
+    userErrors { field message }
+  }
+}
+
+# Then publish it (and the products) to the Online Store publication:
+# mutation { publishablePublish(id: "gid://shopify/Collection/…", input: [{publicationId: "gid://shopify/Publication/…"}]) { userErrors { field message } } }
+# Find the publication id with: { publications(first: 5) { nodes { id name } } }

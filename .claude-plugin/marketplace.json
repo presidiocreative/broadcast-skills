@@ -1,0 +1,28 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "broadcast-skills",
+  "description": "Claude Code skills for building on the Broadcast Shopify theme by Presidio Creative: pre-order, product siblings, and more over time.",
+  "owner": {
+    "name": "Presidio Creative"
+  },
+  "plugins": [
+    {
+      "name": "broadcast",
+      "source": "./plugins/broadcast",
+      "description": "Skills and the Broadcast docs MCP server for implementing Broadcast theme features (pre-order, siblings) on a Shopify store.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Presidio Creative"
+      },
+      "category": "development",
+      "keywords": [
+        "shopify",
+        "broadcast",
+        "theme",
+        "liquid",
+        "pre-order",
+        "siblings"
+      ]
+    }
+  ]
+}

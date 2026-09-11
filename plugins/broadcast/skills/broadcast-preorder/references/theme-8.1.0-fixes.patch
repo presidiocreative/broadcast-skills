@@ -1,0 +1,35 @@
+diff --git a/snippets/cart-bar.liquid b/snippets/cart-bar.liquid
+index 5843641..824c150 100644
+--- a/snippets/cart-bar.liquid
++++ b/snippets/cart-bar.liquid
+@@ -94,7 +94,15 @@
+             {%- if button_add -%}
+               {%- assign preorder_check = false -%}
+ 
+-              {%- if product.tags contains '_preorder' or product.metafields.theme.preorder.value -%}
++              {%- if product.tags contains '_preorder' -%}
++                {%- assign preorder_check = true -%}
++              {%- endif -%}
++
++              {%- if product.metafields.theme.preorder.type == 'boolean' and product.metafields.theme.preorder.value == true -%}
++                {%- assign preorder_check = true -%}
++              {%- endif -%}
++
++              {%- if current_variant.metafields.theme.preorder.type == 'boolean' and current_variant.metafields.theme.preorder.value == true -%}
+                 {%- assign preorder_check = true -%}
+               {%- endif -%}
+ 
+diff --git a/snippets/quick-add-product.liquid b/snippets/quick-add-product.liquid
+index 5988e55..1c68b9c 100644
+--- a/snippets/quick-add-product.liquid
++++ b/snippets/quick-add-product.liquid
+@@ -35,7 +35,9 @@
+     assign has_preorder_meta = true
+   endif
+ 
++  assign preorder = false
+   if has_preorder_meta or has_preorder_tag
++    assign preorder = true
+     assign preorder_name = 'products.product.sale_type' | t | strip_html | escape
+     assign preorder_value = 'products.product.pre_order' | t | strip_html | escape
+   endif

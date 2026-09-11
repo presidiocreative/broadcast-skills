@@ -1,0 +1,16 @@
+{
+  "name": "broadcast",
+  "description": "Skills and the Broadcast docs MCP server for implementing Broadcast theme features (pre-order, siblings) on a Shopify store.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Presidio Creative"
+  },
+  "repository": "https://github.com/presidiocreative/broadcast-skills",
+  "license": "MIT",
+  "keywords": [
+    "shopify",
+    "broadcast",
+    "theme",
+    "liquid"
+  ]
+}

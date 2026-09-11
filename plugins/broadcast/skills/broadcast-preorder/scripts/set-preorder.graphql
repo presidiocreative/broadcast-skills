@@ -1,0 +1,12 @@
+# Flag products or variants as pre-order. ownerId is a Product or ProductVariant gid.
+# Example variables:
+# {"metafields":[{"ownerId":"gid://shopify/Product/123","namespace":"theme","key":"preorder","type":"boolean","value":"true"}]}
+mutation SetPreorder($metafields: [MetafieldsSetInput!]!) {
+  metafieldsSet(metafields: $metafields) {
+    metafields { id namespace key value owner { ... on Product { id title } ... on ProductVariant { id title } } }
+    userErrors { field message code }
+  }
+}
+
+# Assign the pre-order template (and optionally the tag) on the same product:
+# mutation { productUpdate(product: {id: "gid://shopify/Product/123", templateSuffix: "preorder"}) { product { id templateSuffix } userErrors { field message } } }

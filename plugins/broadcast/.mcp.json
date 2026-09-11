@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "broadcast-docs": {
+      "type": "http",
+      "url": "https://broadcast.presidiocreative.com/~gitbook/mcp"
+    }
+  }
+}
