@@ -1,0 +1,13 @@
+# Set badge / cutline / final sale values per product.
+# {"metafields":[
+#   {"ownerId":"gid://shopify/Product/1","namespace":"theme","key":"badge","type":"single_line_text_field","value":"Best seller"},
+#   {"ownerId":"gid://shopify/Product/1","namespace":"theme","key":"cutline","type":"single_line_text_field","value":"Waterproof · Zero drop"},
+#   {"ownerId":"gid://shopify/Product/1","namespace":"theme","key":"final_sale","type":"boolean","value":"true"}
+# ]}
+mutation SetLabels($metafields: [MetafieldsSetInput!]!) {
+  metafieldsSet(metafields: $metafields) {
+    metafields { id namespace key value owner { ... on Product { id handle } } }
+    userErrors { field message code }
+  }
+}
+# Tag alternative for badges: mutation { tagsAdd(id: "gid://shopify/Product/1", tags: ["_badge_Best seller"]) { userErrors { field message } } }

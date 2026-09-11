@@ -1,0 +1,13 @@
+# Creates the product metafield definition(s) Broadcast reads for upsells.
+# Variables: metafield-definitions.variables.json
+# Do NOT add `access.admin` — Shopify rejects admin access controls on the `theme` namespace.
+mutation CreateUpsellDefs($upsellList: MetafieldDefinitionInput!, $upsellSingle: MetafieldDefinitionInput!) {
+  upsellList: metafieldDefinitionCreate(definition: $upsellList) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+  upsellSingle: metafieldDefinitionCreate(definition: $upsellSingle) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+}

@@ -1,0 +1,12 @@
+# Pair products. For theme.upsell_list the value is a JSON array string of product gids (max 3 rendered).
+# Variables example:
+# {"metafields":[
+#   {"ownerId":"gid://shopify/Product/111","namespace":"theme","key":"upsell_list","type":"list.product_reference",
+#    "value":"[\"gid://shopify/Product/222\",\"gid://shopify/Product/333\"]"}
+# ]}
+mutation SetUpsells($metafields: [MetafieldsSetInput!]!) {
+  metafieldsSet(metafields: $metafields) {
+    metafields { id namespace key value owner { ... on Product { id handle } } }
+    userErrors { field message code }
+  }
+}

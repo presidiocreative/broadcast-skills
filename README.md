@@ -28,8 +28,13 @@ Installing the plugin also registers the `broadcast-docs` MCP server, which expo
 | --- | --- |
 | `broadcast-preorder` | A merchant wants Pre-order buttons and badges on some products or variants, or asks how Broadcast handles pre-orders. |
 | `broadcast-siblings` | A merchant wants each colour sold as its own product with linked swatches on the product page. |
+| `broadcast-upsells` | Pair products for "Complete the look" promotions on the product page and cart drawer. |
+| `broadcast-bundles` | Bundle and Save promotions backed by an automatic discount (Broadcast 7.1+). |
+| `broadcast-badges-cutlines` | Custom badges, cutline second-line text, Final Sale messaging. |
+| `broadcast-size-charts` | Size chart pages per product and the Fit guide block. |
+| `broadcast-swatches` | Variant colour swatches: Shopify native colour taxonomy vs the theme swatch list, grid swatch styles. |
 
-Skills trigger automatically from natural requests ("add pre-order to this product", "set up siblings for the Antigravity colours"), or explicitly with `/broadcast-preorder` and `/broadcast-siblings`.
+Skills trigger automatically from natural requests ("add pre-order to this product", "set up siblings for the Antigravity colours", "why are my swatches grey"), or explicitly with `/broadcast-<name>`.
 
 ## What a skill needs from the session
 

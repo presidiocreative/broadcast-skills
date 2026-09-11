@@ -1,0 +1,9 @@
+# Creates the product metafield definition(s) Broadcast reads for size charts.
+# Variables: metafield-definitions.variables.json
+# Do NOT add `access.admin` — Shopify rejects admin access controls on the `theme` namespace.
+mutation CreateSizeChartDefs($sizeChart: MetafieldDefinitionInput!) {
+  sizeChart: metafieldDefinitionCreate(definition: $sizeChart) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+}

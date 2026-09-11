@@ -1,0 +1,17 @@
+# Creates the product metafield definition(s) Broadcast reads for badges, cutlines and final sale.
+# Variables: metafield-definitions.variables.json
+# Do NOT add `access.admin` — Shopify rejects admin access controls on the `theme` namespace.
+mutation CreateLabelDefs($badge: MetafieldDefinitionInput!, $cutline: MetafieldDefinitionInput!, $finalSale: MetafieldDefinitionInput!) {
+  badge: metafieldDefinitionCreate(definition: $badge) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+  cutline: metafieldDefinitionCreate(definition: $cutline) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+  finalSale: metafieldDefinitionCreate(definition: $finalSale) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+}

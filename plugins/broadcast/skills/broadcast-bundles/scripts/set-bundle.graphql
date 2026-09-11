@@ -1,0 +1,19 @@
+# Pair bundle companions and title on the main product.
+# Variables example:
+# {"metafields":[
+#   {"ownerId":"gid://shopify/Product/111","namespace":"theme","key":"bundle_list","type":"list.product_reference","value":"[\"gid://shopify/Product/222\",\"gid://shopify/Product/333\"]"},
+#   {"ownerId":"gid://shopify/Product/111","namespace":"custom","key":"bundle_title","type":"single_line_text_field","value":"Bundle and save 15%"}
+# ]}
+mutation SetBundle($metafields: [MetafieldsSetInput!]!) {
+  metafieldsSet(metafields: $metafields) {
+    metafields { id namespace key value owner { ... on Product { id handle } } }
+    userErrors { field message code }
+  }
+}
+
+# Automatic discount (percentage off when the bundled products are in the cart) — adjust products and value:
+# mutation { discountAutomaticBasicCreate(automaticBasicDiscount: {
+#   title: "Bundle and save 15%", startsAt: "2026-01-01T00:00:00Z",
+#   customerGets: { value: { percentage: 0.15 }, items: { products: { productsToAdd: ["gid://shopify/Product/111","gid://shopify/Product/222"] } } },
+#   minimumRequirement: { quantity: { greaterThanOrEqualToQuantity: "2" } }
+# }) { automaticDiscountNode { id } userErrors { field message } } }

@@ -1,0 +1,11 @@
+{
+  "sizeChart": {
+    "name": "Size Chart",
+    "namespace": "custom",
+    "key": "size_chart",
+    "description": "Broadcast: the size chart page opened from the Size option on this product. https://broadcast.presidiocreative.com/products/product-pages/size-charts",
+    "ownerType": "PRODUCT",
+    "type": "page_reference",
+    "pin": true
+  }
+}

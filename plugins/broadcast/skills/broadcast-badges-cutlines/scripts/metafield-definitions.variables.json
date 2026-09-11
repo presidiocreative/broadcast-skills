@@ -1,0 +1,29 @@
+{
+  "badge": {
+    "name": "Badge",
+    "namespace": "theme",
+    "key": "badge",
+    "description": "Broadcast: custom badge text shown on product cards. https://broadcast.presidiocreative.com/collections/collection-pages/product-badges-with-metafields",
+    "ownerType": "PRODUCT",
+    "type": "single_line_text_field",
+    "pin": true
+  },
+  "cutline": {
+    "name": "Cutline",
+    "namespace": "theme",
+    "key": "cutline",
+    "description": "Broadcast: second line of text under the product title in grids. https://broadcast.presidiocreative.com/collections/collection-pages/cutline",
+    "ownerType": "PRODUCT",
+    "type": "single_line_text_field",
+    "pin": true
+  },
+  "finalSale": {
+    "name": "Final Sale",
+    "namespace": "theme",
+    "key": "final_sale",
+    "description": "Broadcast: True shows the Final sale message on this product. https://broadcast.presidiocreative.com/products/product-pages/final-sale",
+    "ownerType": "PRODUCT",
+    "type": "boolean",
+    "pin": true
+  }
+}

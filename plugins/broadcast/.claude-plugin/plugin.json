@@ -1,7 +1,7 @@
 {
   "name": "broadcast",
-  "description": "Skills and the Broadcast docs MCP server for implementing Broadcast theme features (pre-order, siblings) on a Shopify store.",
-  "version": "0.1.0",
+  "description": "Skills and the Broadcast docs MCP server for implementing Broadcast theme features (pre-order, siblings, upsells, bundles, badges & cutlines, size charts, swatches) on a Shopify store.",
+  "version": "0.2.0",
   "author": {
     "name": "Presidio Creative"
   },

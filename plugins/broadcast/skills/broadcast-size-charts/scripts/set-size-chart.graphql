@@ -1,0 +1,9 @@
+# Point a product at its size chart page.
+# {"metafields":[{"ownerId":"gid://shopify/Product/1","namespace":"custom","key":"size_chart","type":"page_reference","value":"gid://shopify/Page/123"}]}
+mutation SetSizeChart($metafields: [MetafieldsSetInput!]!) {
+  metafieldsSet(metafields: $metafields) {
+    metafields { id namespace key value owner { ... on Product { id handle } } }
+    userErrors { field message code }
+  }
+}
+# Tag alternative (Broadcast 8.1 variant picker): tagsAdd(id: ..., tags: ["_size_size-chart-mens"])

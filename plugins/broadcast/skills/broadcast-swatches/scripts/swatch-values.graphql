@@ -1,0 +1,16 @@
+# List option values with their resolved swatches (native) so you can see what is unmapped.
+query SwatchValues($first: Int = 50, $after: String) {
+  products(first: $first, after: $after, query: "status:active") {
+    pageInfo { hasNextPage endCursor }
+    nodes {
+      handle
+      options {
+        name
+        linkedMetafield { namespace key }
+        optionValues { name swatch { color image { image { url } } } }
+      }
+    }
+  }
+}
+# Link a Color option to Shopify's colour taxonomy (verify input names with graphql_schema first):
+# mutation { productOptionUpdate(productId: "gid://shopify/Product/1", option: { id: "gid://shopify/ProductOption/2", linkedMetafield: { namespace: "shopify", key: "color-pattern" } }) { userErrors { field message code } } }

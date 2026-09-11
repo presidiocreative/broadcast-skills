@@ -1,0 +1,17 @@
+# Creates the product metafield definition(s) Broadcast reads for Bundle and Save.
+# Variables: metafield-definitions.variables.json
+# Do NOT add `access.admin` — Shopify rejects admin access controls on the `theme` namespace.
+mutation CreateBundleDefs($bundleList: MetafieldDefinitionInput!, $bundleSingle: MetafieldDefinitionInput!, $bundleTitle: MetafieldDefinitionInput!) {
+  bundleList: metafieldDefinitionCreate(definition: $bundleList) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+  bundleSingle: metafieldDefinitionCreate(definition: $bundleSingle) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+  bundleTitle: metafieldDefinitionCreate(definition: $bundleTitle) {
+    createdDefinition { id name namespace key type { name } ownerType }
+    userErrors { field message code }
+  }
+}

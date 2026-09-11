@@ -1,0 +1,20 @@
+{
+  "upsellList": {
+    "name": "Upsell list",
+    "namespace": "theme",
+    "key": "upsell_list",
+    "description": "Broadcast: up to 3 products promoted on this product's page and in the cart drawer. https://broadcast.presidiocreative.com/promotions/upselling/upselling",
+    "ownerType": "PRODUCT",
+    "type": "list.product_reference",
+    "pin": true
+  },
+  "upsellSingle": {
+    "name": "Upsell",
+    "namespace": "theme",
+    "key": "upsell",
+    "description": "Broadcast: single product promoted on this product's page and in the cart drawer (legacy single-product upsell).",
+    "ownerType": "PRODUCT",
+    "type": "product_reference",
+    "pin": true
+  }
+}

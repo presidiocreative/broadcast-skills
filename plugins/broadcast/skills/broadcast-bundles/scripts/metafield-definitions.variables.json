@@ -1,0 +1,29 @@
+{
+  "bundleList": {
+    "name": "Bundle list",
+    "namespace": "theme",
+    "key": "bundle_list",
+    "description": "Broadcast Bundle and Save: up to 3 companion products promoted with an automatic discount. https://broadcast.presidiocreative.com/promotions/bundle-and-save",
+    "ownerType": "PRODUCT",
+    "type": "list.product_reference",
+    "pin": true
+  },
+  "bundleSingle": {
+    "name": "Bundle",
+    "namespace": "theme",
+    "key": "bundle",
+    "description": "Broadcast Bundle and Save: single companion product.",
+    "ownerType": "PRODUCT",
+    "type": "product_reference",
+    "pin": true
+  },
+  "bundleTitle": {
+    "name": "Bundle title",
+    "namespace": "custom",
+    "key": "bundle_title",
+    "description": "Broadcast Bundle and Save: promotion heading for this product, e.g. Bundle and save 15%.",
+    "ownerType": "PRODUCT",
+    "type": "single_line_text_field",
+    "pin": true
+  }
+}
