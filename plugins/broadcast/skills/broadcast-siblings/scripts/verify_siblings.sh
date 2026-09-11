@@ -10,7 +10,7 @@ echo "swatch buttons:   $(grep -c 'swatch__button' <<<"$pdp")"
 echo "siblings linked:  $(python3 - "$pdp" <<'PY'
 import re,sys
 h=sys.argv[1]
-print(" ".join(sorted(set(re.findall(r'swatch__button[^>]*?href="/products/([^"?#]+)', h)))) or "(no links found)")
+print(" ".join(sorted(set(re.findall(r'<a[^>]*href="/products/([^"?#]+)"[^>]*class="sibling__link"', h) + re.findall(r'<a[^>]*class="sibling__link"[^>]*href="/products/([^"?#]+)"', h)))) or "(no links found)")
 PY
 )"
 echo "swatch classes:   $(grep -oE 'swatch-[a-z0-9-]+' <<<"$pdp" | grep -v swatch-input | sort -u | xargs)"
