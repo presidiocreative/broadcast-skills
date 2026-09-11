@@ -22,7 +22,7 @@ A distilled copy is in `references/broadcast-docs.md` if the MCP server is unava
 | --- | --- |
 | A handful of products, whole product is pre-order, no admin setup wanted | Tag `_preorder` |
 | Ongoing use, merchandisers toggle it from the product form | Product metafield `theme.preorder` (boolean) |
-| Only some colours or sizes are pre-order | Variant metafield `theme.preorder` (boolean) |
+| Only some colors or sizes are pre-order | Variant metafield `theme.preorder` (boolean) |
 
 Any one method is enough; the theme checks all three. The metafield methods need the definitions created once (step 2). Both live in namespace `theme`, key `preorder`, type `boolean`, exactly as the docs specify. Do not rename them.
 
@@ -30,7 +30,7 @@ Any one method is enough; the theme checks all three. The metafield methods need
 
 1. **Confirm the theme.** Read `config/settings_schema.json` `theme_info` for the version, and grep `snippets/product-buttons.liquid` for `metafields.theme.preorder`. Variant-level support needs 7.1 or later. If the theme is customised, check the same grep in `product-grid-item.liquid`, `quick-add-product.liquid` and `cart-bar.liquid`.
 2. **Create the metafield definitions** (skip for the tag-only method). Run `scripts/metafield-definitions.graphql` with `scripts/metafield-definitions.variables.json`. Do **not** pass `access.admin`; Shopify rejects any admin access control on the `theme` namespace with "must be one of public_read_write". Pin them so they show on the product form.
-3. **Turn on the badge.** Theme settings → Badges → *Show pre-order badge* is `show_preorder_badge` in `config/settings_data.json` `current`. Set it to `true` and set `preorder_bg_color` / `preorder_text_color` to brand colours. If `current` is a string (a preset name) or a mangled object with keys `"0","1",...`, rebuild it from the preset first or Shopify's editor will complain that colour schemes are undefined.
+3. **Turn on the badge.** Theme settings → Badges → *Show pre-order badge* is `show_preorder_badge` in `config/settings_data.json` `current`. Set it to `true` and set `preorder_bg_color` / `preorder_text_color` to brand colors. If `current` is a string (a preset name) or a mangled object with keys `"0","1",...`, rebuild it from the preset first or Shopify's editor will complain that color schemes are undefined.
 4. **Create a pre-order template (optional, recommended).** Run `scripts/create_preorder_template.py templates/product.json templates/product.preorder.json`. It copies the default product template, turns off dynamic checkout (Buy it now) in the Buy buttons block per the docs, adds a "Pre-order details" text block under the button for ship-date copy, and disables the Inventory countdown block, which would read as out of stock on zero-stock pre-order items. It preserves Shopify's auto-generated comment header if present. Assign it per product with `templateSuffix: "preorder"`.
 5. **Flag the products.** Tag method: `tagsAdd` with `_preorder`. Metafield method: `metafieldsSet` with `scripts/set-preorder.graphql` (ownerId is a Product or ProductVariant gid, value `"true"`). Add `templateSuffix` on the same `productUpdate` when using the template.
 6. **Make the variant purchasable.** The flag only changes labels. A tracked variant at zero stock is still unavailable and shows *Sold out*. Set `inventoryPolicy: CONTINUE` on pre-order variants or keep stock on hand. Tell the merchant this explicitly; it is the most common "pre-order isn't working" cause.

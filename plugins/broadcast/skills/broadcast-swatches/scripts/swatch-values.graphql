@@ -12,5 +12,5 @@ query SwatchValues($first: Int = 50, $after: String) {
     }
   }
 }
-# Link a Color option to Shopify's colour taxonomy (verify input names with graphql_schema first):
+# Link a Color option to Shopify's color taxonomy (verify input names with graphql_schema first):
 # mutation { productOptionUpdate(productId: "gid://shopify/Product/1", option: { id: "gid://shopify/ProductOption/2", linkedMetafield: { namespace: "shopify", key: "color-pattern" } }) { userErrors { field message code } } }

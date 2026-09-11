@@ -72,5 +72,5 @@
       }
     ]
   },
-  "_note": "Use with: mutation($input: ProductSetInput!){ productSet(input:$input, synchronous:true){ product{ id handle } userErrors{ field message code } } }. No Colour option — the colour is the metafield."
+  "_note": "Use with: mutation($input: ProductSetInput!){ productSet(input:$input, synchronous:true){ product{ id handle } userErrors{ field message code } } }. No Color option — the color is the metafield."
 }

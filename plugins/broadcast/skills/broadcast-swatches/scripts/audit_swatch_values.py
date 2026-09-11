@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cross-check variant colour values against the theme's swatch_color_list and native swatches.
+"""Cross-check variant color values against the theme's swatch_color_list and native swatches.
 
 Usage: audit_swatch_values.py <settings_data.json> <swatch-values.json>
   swatch-values.json is the output of scripts/swatch-values.graphql (the data.products.nodes array or the full response).
@@ -31,7 +31,7 @@ def main():
                 if not native and handle(v["name"]) not in listed:
                     grey.setdefault(v["name"], []).append(p["handle"])
     if not grey:
-        print("every colour value resolves to a native swatch or a swatch_color_list entry"); return
+        print("every color value resolves to a native swatch or a swatch_color_list entry"); return
     print("values that will render as grey chips:")
     for name, handles in sorted(grey.items()):
         print(f"  {name!r} (handle {handle(name)}) on {len(handles)} product(s): {', '.join(handles[:4])}{'…' if len(handles)>4 else ''}")
